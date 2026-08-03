@@ -4,7 +4,7 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/03/2026 03:30:18
+  time: 08/03/2026 19:05:28
   entityCount: 3150
 maps:
 - 2
@@ -1362,10 +1362,10 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
       spreadQueues:
-        Kudzu: []
-        Smoke: []
-        MetalFoam: []
         Puddle: []
+        MetalFoam: []
+        Smoke: []
+        Kudzu: []
       updateAccumulator: 0.15049124
     - type: Shuttle
       dampingModifier: 0.25
@@ -2332,10 +2332,10 @@ entities:
       chunks: {}
     - type: SpreaderGrid
       spreadQueues:
-        Kudzu: []
-        Smoke: []
-        MetalFoam: []
         Puddle: []
+        MetalFoam: []
+        Smoke: []
+        Kudzu: []
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
@@ -3628,6 +3628,11 @@ entities:
     components:
     - type: Transform
       pos: 70.5,40.5
+      parent: 1
+  - uid: 857
+    components:
+    - type: Transform
+      pos: 78.5,63.5
       parent: 1
   - uid: 859
     components:
@@ -5106,13 +5111,6 @@ entities:
       anchored: False
       pos: 1.5,30.5
       parent: 2
-- proto: BF14FogSpawner2
-  entities:
-  - uid: 857
-    components:
-    - type: Transform
-      pos: 78.5,63.5
-      parent: 1
 - proto: BF14NuclearFuelRodsDamagedHazard
   entities:
   - uid: 120

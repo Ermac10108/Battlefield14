@@ -4,7 +4,7 @@ meta:
   engineVersion: 264.0.0
   forkId: ""
   forkVersion: ""
-  time: 08/03/2026 03:28:59
+  time: 08/03/2026 19:06:53
   entityCount: 2963
 maps:
 - 2
@@ -1362,10 +1362,10 @@ entities:
     - type: OccluderTree
     - type: SpreaderGrid
       spreadQueues:
-        Kudzu: []
-        Smoke: []
-        MetalFoam: []
         Puddle: []
+        MetalFoam: []
+        Smoke: []
+        Kudzu: []
       updateAccumulator: 0.15049124
     - type: Shuttle
       dampingModifier: 0.25
@@ -2321,7 +2321,7 @@ entities:
   - uid: 2
     components:
     - type: MetaData
-      name: Mapping BF14FactoryWarZMap [1]
+      name: Mapping BF14FactoryUnrestZMap [1]
     - type: Transform
     - type: Map
       mapPaused: True
@@ -2332,10 +2332,10 @@ entities:
       chunks: {}
     - type: SpreaderGrid
       spreadQueues:
-        Kudzu: []
-        Smoke: []
-        MetalFoam: []
         Puddle: []
+        MetalFoam: []
+        Smoke: []
+        Kudzu: []
     - type: GridPathfinding
     - type: Gravity
       gravityShakeSound: !type:SoundPathSpecifier
@@ -3485,6 +3485,11 @@ entities:
     - type: Transform
       pos: 70.5,40.5
       parent: 1
+  - uid: 857
+    components:
+    - type: Transform
+      pos: 78.5,63.5
+      parent: 1
   - uid: 859
     components:
     - type: Transform
@@ -4079,13 +4084,6 @@ entities:
     components:
     - type: Transform
       pos: 65.5,34.5
-      parent: 1
-- proto: BF14FogSpawner5
-  entities:
-  - uid: 857
-    components:
-    - type: Transform
-      pos: 78.5,63.5
       parent: 1
 - proto: BF14NuclearFuelRodsDamagedHazard
   entities:
