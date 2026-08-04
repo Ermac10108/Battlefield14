@@ -303,7 +303,8 @@
         volume: -3
         variation: 0.125
   - type: ChamberMagazineAmmoProvider
-    boltClosed: null
+    boltClosed: false
+    autoOpenBoltOnEmpty: false
     soundRack:
       path: /Audio/_Battlefield14/Weapons/Guns/M249/uc_m249_rack.ogg
   - type: ItemSlots
