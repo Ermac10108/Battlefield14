@@ -23,7 +23,7 @@
     - name: Armour
       choices: { BF14Armour: 1 }
       entries:
-      - id: ClothingOuterArmorPlateCarrierTan
+      - id: ClothingOuterArmorPlateCarrierIOTV
         name: plate carrier
       - id: ArmorPlateMediumPackaged
         recommended: true
