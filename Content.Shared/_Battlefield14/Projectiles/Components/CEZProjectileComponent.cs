@@ -1,25 +1,36 @@
+using System.Numerics;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared._Battlefield14.Projectiles.Components;
 
-// Marks a projectile that travels between z-levels (maps) mid-flight, so shots can hit targets standing on the level above or below through openings in the floor/ceiling.
-
+/// <summary>
+/// Marks a projectile that travels between z-levels (maps) mid-flight, so shots can hit targets
+/// standing on the level above or below through openings in the floor/ceiling.
+/// </summary>
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class CEZProjectileComponent : Component
 {
-    // Z-level offset the projectile travels. +1 = up, -1 = down.
+    /// <summary>
+    /// Z-level offset the projectile travels. +1 = up, -1 = down.
+    /// </summary>
     [DataField, AutoNetworkedField]
     public int ZOffset;
 
-    // Horizontal distance the projectile must cover before transitioning to the adjacent z-level.
+    /// <summary>
+    /// World position where the projectile was fired from.
+    /// </summary>
     [DataField, AutoNetworkedField]
-    public float TransitionDistance;
+    public Vector2 SpawnPoint;
 
-    // Cumulative distance the projectile has traveled since it was fired.
+    /// <summary>
+    /// World position of the opening the projectile must pass through to reach the adjacent z-level.
+    /// </summary>
     [DataField, AutoNetworkedField]
-    public float DistanceTraveled;
+    public Vector2 TransitionPoint;
 
-    // Whether the projectile has already transitioned between z-levels.
+    /// <summary>
+    /// Whether the projectile has already transitioned between z-levels.
+    /// </summary>
     [DataField, AutoNetworkedField]
     public bool Transitioned;
 }

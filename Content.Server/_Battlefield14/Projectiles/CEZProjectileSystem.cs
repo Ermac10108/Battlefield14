@@ -11,13 +11,11 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._Battlefield14.Projectiles;
 
-
 public sealed class CEZProjectileSystem : EntitySystem
 {
+    public const float MinZShotDistance = 4f;
 
-    public const float MinZShotDistance = 3f;
-
-    private const float MinTransitionDistance = 1.5f;
+    private const float MaxTransitionLateralOffset = 1.5f;
 
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
@@ -35,17 +33,16 @@ public sealed class CEZProjectileSystem : EntitySystem
     {
         base.Update(frameTime);
 
-        var query = EntityQueryEnumerator<CEZProjectileComponent, PhysicsComponent, TransformComponent>();
-        while (query.MoveNext(out var uid, out var zProj, out var physics, out _))
+        var query = EntityQueryEnumerator<CEZProjectileComponent, TransformComponent>();
+        while (query.MoveNext(out var uid, out var zProj, out var xform))
         {
-            if (zProj.Transitioned || zProj.ZOffset == 0 || zProj.TransitionDistance <= 0f)
+            if (zProj.Transitioned || zProj.ZOffset == 0)
                 continue;
 
-            zProj.DistanceTraveled += physics.LinearVelocity.Length() * frameTime;
-
-            if (zProj.DistanceTraveled < zProj.TransitionDistance)
+            if (!ShouldTransition(zProj, _transform.GetWorldPosition(xform)))
                 continue;
 
+            // Preserve world position and velocity while hopping to the adjacent z-level map.
             if (_zLevels.TryMove(uid, zProj.ZOffset))
             {
                 zProj.Transitioned = true;
@@ -54,10 +51,10 @@ public sealed class CEZProjectileSystem : EntitySystem
         }
     }
 
-    public bool TryGetZShot(EntityUid? user, MapCoordinates from, Vector2 to, out int zOffset, out float transitionDistance)
+    public bool TryGetZShot(EntityUid? user, EntityUid? target, MapCoordinates from, Vector2 to, out int zOffset, out Vector2 transitionPoint)
     {
         zOffset = 0;
-        transitionDistance = 0f;
+        transitionPoint = default;
 
         if (user is not { } shooter)
             return false;
@@ -66,38 +63,68 @@ public sealed class CEZProjectileSystem : EntitySystem
         if (shooterMapUid is null || !_zLevels.TryGetMapNetwork(shooterMapUid.Value, out _))
             return false;
 
-        if (Vector2.Distance(from.Position, to) < MinZShotDistance)
+        // Aim at the actual target when one is hovered, otherwise fall back to the raw aim point.
+        var aimPoint = target is { Valid: true } targetUid && !TerminatingOrDeleted(targetUid)
+            ? _transform.GetWorldPosition(targetUid)
+            : to;
+
+        // Target must be far enough away horizontally for the shot to make sense between levels.
+        if (Vector2.Distance(from.Position, aimPoint) < MinZShotDistance)
             return false;
 
+        // Looking up means the shot is aimed at the level above, otherwise it is aimed at the
+        // current level (levels below are always visible).
         var lookUp = TryComp<CEZLevelViewerComponent>(shooter, out var viewer) && viewer.LookUp;
 
-        var offset = lookUp ? 1 : -1;
-        EntityUid openingMap;
         if (lookUp)
         {
             if (!_zLevels.TryMapUp(shooterMapUid.Value, out var aboveMap))
                 return false;
 
-            openingMap = aboveMap.Owner;
-        }
-        else
-        {
-            if (!_zLevels.TryMapDown(shooterMapUid.Value, out _))
+            // The opening is in the floor of the level above (the ceiling above the shooter).
+            // The bullet rises through the first hole along the line of fire.
+            if (!TryFindOpeningPoint(aboveMap.Owner, from.Position, aimPoint, out var openingPoint))
                 return false;
 
-            openingMap = shooterMapUid.Value;
+            zOffset = 1;
+            transitionPoint = openingPoint;
+            return true;
         }
 
-        if (!TryFindOpeningPoint(openingMap, from.Position, to, out var openingPoint))
+        // Downward shots only trigger when deliberately aiming into an opening in the current
+        // floor, otherwise ordinary shots would randomly drop a level whenever the line of fire
+        // happens to cross a floor gap.
+        if (!_zLevels.TryMapDown(shooterMapUid.Value, out _))
             return false;
 
-        var transitionDist = Vector2.Distance(from.Position, openingPoint);
-        if (transitionDist < MinTransitionDistance)
+        if (!IsOpeningAt(shooterMapUid.Value, aimPoint))
             return false;
 
-        zOffset = offset;
-        transitionDistance = transitionDist;
+        if (!TryFindOpeningPoint(shooterMapUid.Value, from.Position, aimPoint, out var downOpeningPoint))
+            return false;
+
+        zOffset = -1;
+        transitionPoint = downOpeningPoint;
         return true;
+    }
+
+    private static bool ShouldTransition(CEZProjectileComponent comp, Vector2 currentPos)
+    {
+        var toTransition = comp.TransitionPoint - comp.SpawnPoint;
+        var sqLen = toTransition.LengthSquared();
+        if (sqLen <= 0f)
+            return false;
+
+        var displacement = currentPos - comp.SpawnPoint;
+
+        // The projectile must have reached (or passed) the opening along the line of fire.
+        if (Vector2.Dot(displacement, toTransition) < sqLen)
+            return false;
+
+        // ... and must actually be near the line (spread pellets that miss the hole stay behind).
+        var cross = displacement.X * toTransition.Y - displacement.Y * toTransition.X;
+        var lateral = MathF.Abs(cross) / MathF.Sqrt(sqLen);
+        return lateral <= MaxTransitionLateralOffset;
     }
 
     private bool TryFindOpeningPoint(EntityUid mapUid, Vector2 from, Vector2 to, out Vector2 openingPoint)
@@ -114,6 +141,7 @@ public sealed class CEZProjectileSystem : EntitySystem
         if (startTile == endTile)
             return false;
 
+        // DDA walk over tiles in grid-local space, skipping the shooter's own tile.
         var dx = Math.Abs(endTile.X - startTile.X);
         var dy = Math.Abs(endTile.Y - startTile.Y);
         var sx = startTile.X < endTile.X ? 1 : -1;
@@ -127,8 +155,7 @@ public sealed class CEZProjectileSystem : EntitySystem
             if (!first && IsOpeningTile(gridUid, grid, current))
             {
                 openingPoint = GetTileCenterWorld(gridUid, grid, current);
-                if (Vector2.Distance(from, openingPoint) >= MinTransitionDistance)
-                    return true;
+                return true;
             }
             first = false;
 
@@ -149,6 +176,14 @@ public sealed class CEZProjectileSystem : EntitySystem
         }
 
         return false;
+    }
+
+    private bool IsOpeningAt(EntityUid mapUid, Vector2 pos)
+    {
+        if (!_mapManager.TryFindGridAt(mapUid, pos, out var gridUid, out var grid))
+            return true;
+
+        return IsOpeningTile(gridUid, grid, _map.WorldToTile(gridUid, grid, pos));
     }
 
     private bool IsOpeningTile(EntityUid gridUid, MapGridComponent grid, Vector2i tile)

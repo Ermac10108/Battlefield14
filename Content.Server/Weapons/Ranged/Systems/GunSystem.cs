@@ -117,7 +117,7 @@ public sealed partial class GunSystem : SharedGunSystem
 
         // BF14 - allow shots to travel between z-levels through floor/ceiling openings.
         var zOffset = 0;
-        var zTransitionDistance = 0f;
+        var zTransitionPoint = Vector2.Zero;
 
         foreach (var (ent, shootable) in ammo)
         {
@@ -128,7 +128,7 @@ public sealed partial class GunSystem : SharedGunSystem
             toMap = fromMap.Position + angle.ToVec() * mapDirection.Length();
             mapDirection = toMap - fromMap.Position;
 
-            _cezProjectile.TryGetZShot(user, fromMap, toMap, out zOffset, out zTransitionDistance);
+            _cezProjectile.TryGetZShot(user, gun.Target, fromMap, toMap, out zOffset, out zTransitionPoint);
 
             // pneumatic cannon doesn't shoot bullets it just throws them, ignore ammo handling
             if (throwItems && ent != null)
@@ -213,19 +213,19 @@ public sealed partial class GunSystem : SharedGunSystem
                 var angles = LinearSpread(mapAngle - spreadEvent.Spread / 2,
                     mapAngle + spreadEvent.Spread / 2, ammoSpreadComp.Count);
 
-                ShootOrThrow(ammoEnt, angles[0].ToVec(), gunVelocity, gun, gunUid, user, offset, zOffset, zTransitionDistance);
+                ShootOrThrow(ammoEnt, angles[0].ToVec(), gunVelocity, gun, gunUid, user, offset, zOffset, zTransitionPoint);
                 shotProjectiles.Add(ammoEnt);
 
                 for (var i = 1; i < ammoSpreadComp.Count; i++)
                 {
                     var newuid = Spawn(ammoSpreadComp.Proto, fromEnt);
-                    ShootOrThrow(newuid, angles[i].ToVec(), gunVelocity, gun, gunUid, user, offset, zOffset, zTransitionDistance);
+                    ShootOrThrow(newuid, angles[i].ToVec(), gunVelocity, gun, gunUid, user, offset, zOffset, zTransitionPoint);
                     shotProjectiles.Add(newuid);
                 }
             }
             else
             {
-                ShootOrThrow(ammoEnt, mapDirection, gunVelocity, gun, gunUid, user, offset, zOffset, zTransitionDistance);
+                ShootOrThrow(ammoEnt, mapDirection, gunVelocity, gun, gunUid, user, offset, zOffset, zTransitionPoint);
                 shotProjectiles.Add(ammoEnt);
             }
 
@@ -235,7 +235,7 @@ public sealed partial class GunSystem : SharedGunSystem
     }
 
     private void ShootOrThrow(EntityUid uid, Vector2 mapDirection, Vector2 gunVelocity, GunComponent gun, EntityUid gunUid, EntityUid? user,
-                              float offset = 0f, int zOffset = 0, float zTransitionDistance = 0f) // Mono - add offset / z-level travel
+                              float offset = 0f, int zOffset = 0, Vector2 zTransitionPoint = default) // BF14 - add offset / z-level travel
     {
         if (gun.Target is { } target && !TerminatingOrDeleted(target))
         {
@@ -273,8 +273,8 @@ public sealed partial class GunSystem : SharedGunSystem
         {
             var zComp = EnsureComp<CEZProjectileComponent>(uid);
             zComp.ZOffset = zOffset;
-            zComp.TransitionDistance = zTransitionDistance;
-            zComp.DistanceTraveled = 0f;
+            zComp.SpawnPoint = _transform.GetWorldPosition(uid);
+            zComp.TransitionPoint = zTransitionPoint;
             Dirty(uid, zComp);
         }
     }
