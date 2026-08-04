@@ -28,7 +28,7 @@
       - id: EVAKitCombatUSMC
         name: voidsuit
         recommended: true
-      - id: ClothingOuterArmorPlateCarrierTan
+      - id: ClothingOuterArmorPlateCarrierIOTV
         name: plate carrier
       - id: ArmorPlateMediumPackaged
     - name: 'Personal Medicine'

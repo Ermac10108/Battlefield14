@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from civ13 at commit https://github.com/SepuIka/Civ13/commit/78f6b626b87a904d9a3dd5d483b4693376932ec3",
+  "license": "Custom",
+  "copyright": "Comissioned from discord: okhrimm for Battlefield14, DO NOT REUSE",
   "size": {
     "x": 32,
     "y": 32
@@ -13,6 +13,14 @@
     {
       "name": "equipped-BELT",
       "directions": 4
+    },
+    {
+        "name": "inhand-left",
+        "directions": 4
+    },
+    {
+        "name": "inhand-right",
+        "directions": 4
     }
   ]
 }

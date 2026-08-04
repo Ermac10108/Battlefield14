@@ -14,6 +14,26 @@
     factionId: "Nato"
 
 - type: entity
+  parent: ClothingUniformJumpsuitCamoUS
+  id: ClothingUniformJumpsuitCamoUSMarpatDesert
+  name: MARPAT desert BDU
+  components:
+  - type: Sprite
+    sprite: _Battlefield14/Clothing/Uniforms/Jumpsuit/usmarpatdesert.rsi
+  - type: Clothing
+    sprite: _Battlefield14/Clothing/Uniforms/Jumpsuit/usmarpatdesert.rsi
+
+- type: entity
+  parent: ClothingUniformJumpsuitCamoUSMarpatDesert
+  id: ClothingUniformJumpsuitCamoUSMarpatWoodland
+  name: MARPAT woodland BDU
+  components:
+  - type: Sprite
+    sprite: _Battlefield14/Clothing/Uniforms/Jumpsuit/usmarpatwoodland.rsi
+  - type: Clothing
+    sprite: _Battlefield14/Clothing/Uniforms/Jumpsuit/usmarpatwoodland.rsi
+
+- type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitSpaceForceCrewman
   name: USSF crewman uniform

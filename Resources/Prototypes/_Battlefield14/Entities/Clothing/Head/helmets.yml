@@ -41,6 +41,26 @@
 
 - type: entity
   parent: ClothingHeadHatHelmetUS
+  id: ClothingHeadHatHelmetUSACH
+  name: ACH helmet
+  components:
+  - type: Sprite
+    sprite: _Battlefield14/Clothing/Head/Helmets/ACH.rsi
+  - type: Clothing
+    sprite: _Battlefield14/Clothing/Head/Helmets/ACH.rsi
+
+- type: entity
+  parent: ClothingHeadHatHelmetUSACH
+  id: ClothingHeadHatHelmetUSACHWoodland
+  name: ACH helmet (MARPAT woodland)
+  components:
+  - type: Sprite
+    sprite: _Battlefield14/Clothing/Head/Helmets/ACHWoodland.rsi
+  - type: Clothing
+    sprite: _Battlefield14/Clothing/Head/Helmets/ACHWoodland.rsi
+
+- type: entity
+  parent: ClothingHeadHatHelmetUS
   id: ClothingHeadHatHelmetUSRiot
   name: american camo riot helmet
   description: This IS for catching shrap and rounds.
@@ -62,6 +82,17 @@
         Piercing: 2
   - type: ExplosionResistance
     damageCoefficient: 0.9
+
+- type: entity
+  parent: ClothingHeadHatHelmetUSRiot
+  id: ClothingHeadHatHelmetUSRiotACH
+  name: ACH riot helmet
+  description: This IS for catching shrap and rounds.
+  components:
+  - type: Sprite
+    sprite: _Battlefield14/Clothing/Head/Helmets/ACHRiot.rsi
+  - type: Clothing
+    sprite: _Battlefield14/Clothing/Head/Helmets/ACHRiot.rsi
 
 - type: entity
   parent: ClothingHeadHatHelmetUS
