@@ -21,6 +21,9 @@ public sealed partial class CEZLevelThrowingSystem : EntitySystem
             || thrown.ThrownTime is not { } thrownTime)
             return;
 
+        if (args.User is not { } user || !TryComp<CEZLevelViewerComponent>(user, out var viewer) || !viewer.LookUp)
+            return;
+
         var flyTime = (float)(landTime - thrownTime).TotalSeconds;
         if (flyTime <= 0f)
             return;
