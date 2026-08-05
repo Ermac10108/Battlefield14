@@ -68,6 +68,26 @@
     sprite: _Battlefield14/Clothing/OuterClothing/Armor/mobastvest.rsi
 
 - type: entity
+  parent: ClothingOuterArmorPlateCarrierBlack
+  id: ClothingOuterArmorPlateCarrier6B45
+  name: 6B45 plate carrier
+  components:
+  - type: Sprite
+    sprite: _Battlefield14/Clothing/OuterClothing/Armor/6b45.rsi
+  - type: Clothing
+    sprite: _Battlefield14/Clothing/OuterClothing/Armor/6b45.rsi
+
+- type: entity
+  parent: ClothingOuterArmorPlateCarrier6B45
+  id: ClothingOuterArmorPlateCarrier6B45Heavy
+  name: 6B45 plate carrier (shoulder pads)
+  components:
+  - type: Sprite
+    sprite: _Battlefield14/Clothing/OuterClothing/Armor/6b45heavy.rsi
+  - type: Clothing
+    sprite: _Battlefield14/Clothing/OuterClothing/Armor/6b45heavy.rsi
+
+- type: entity
   parent: ClothingOuterArmorBase
   id: ClothingOuterArmorPlateCarrierCivillian # nice typo
   name: civilian ballistic vest
