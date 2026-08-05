@@ -52,15 +52,32 @@
 - type: entity
   parent: ClothingBeltMilitaryWebbingUS
   id: ClothingBeltMilitaryWebbingRU
-  name: RU belt rig
+  name: smersh belt rig
+  description: A nice piece of kit, pairs well with a gorka.
+  components:
+  - type: Sprite
+    sprite: _Battlefield14/Clothing/Belt/smersh.rsi
+  - type: Clothing
+    sprite: _Battlefield14/Clothing/Belt/smersh.rsi
+  - type: RandomMetadata
+    nameSegments: [names_smersh]
+
+- type: entity
+  parent: ClothingBeltMilitaryWebbingUS
+  id: ClothingBeltMilitaryWebbingSmallPouchesOlive
+  name: small pouch belt rig
   description: You wish you had a smersh.
   components:
   - type: Sprite
     sprite: _Battlefield14/Clothing/Belt/ru_webbing.rsi
   - type: Clothing
     sprite: _Battlefield14/Clothing/Belt/ru_webbing.rsi
-#  - type: ExplosionResistance
-#    damageCoefficient: 0
+  - type: Storage
+    grid:
+    - 0,0,1,1
+    - 3,0,4,1
+    - 6,0,7,1
+    - 9,0,10,1
 
 - type: entity
   parent: ClothingBeltMilitaryWebbingUS

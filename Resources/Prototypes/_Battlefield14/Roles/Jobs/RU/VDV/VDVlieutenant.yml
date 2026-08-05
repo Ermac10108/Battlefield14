@@ -50,8 +50,8 @@
     ears: ClothingHeadsetAltRUCommand
     belt: ClothingBeltMilitaryWebbingRUFilledAK12TracerGreen
     jumpsuit: ClothingUniformJumpsuitCamoRUEMR
-    head: ClothingHeadHatHelmetRUEMR
-    outerClothing: ClothingOuterArmorPlateCarrierBlack
+    head: ClothingHeadHatHelmetRU6b47
+    outerClothing: ClothingOuterArmorPlateCarrier6B45
     shoes: ClothingShoesBootsJackFilledRU
     neck: ClothingNeckIFFtapeWhite
     suitstorage: WeaponRifleRUAK12SKTracerGreen
