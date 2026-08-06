@@ -660,7 +660,7 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Thermobaric
-    totalIntensity: 75
+    totalIntensity: 80
     intensitySlope: 6
     maxIntensity: 6
     maxTileBreak: 0

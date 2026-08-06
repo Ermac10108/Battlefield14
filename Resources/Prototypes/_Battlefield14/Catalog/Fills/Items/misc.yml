@@ -132,3 +132,17 @@
   - type: StorageFill
     contents:
     - id: BF14MusicDiskRandomProp
+
+- type: entity
+  id: ShipRepairKitFilled
+  parent: ShipRepairKit
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+    - id: ShipRepairDevice
+    - id: ShipRepairDeviceAmmo
+    - id: Crowbar
+    - id: Wrench
+    - id: WelderMini
+    - id: Flare
