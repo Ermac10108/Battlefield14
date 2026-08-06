@@ -30,6 +30,7 @@
 - type: entity
   parent: BF14NuclearFuelRodsHazard
   id: BF14NuclearFuelRodsDamagedHazard
+  suffix: damaged
   components:
   - type: RadiationSource
     intensity: 3
