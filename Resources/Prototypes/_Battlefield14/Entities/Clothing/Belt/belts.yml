@@ -10,13 +10,14 @@
     sprite: _Battlefield14/Clothing/Belt/us_webbing.rsi
   - type: Item
     size: Huge
-  - type: ExplosionResistance
-    damageCoefficient: 0
+#  - type: ExplosionResistance
+#    damageCoefficient: 0
   - type: Storage
     maxItemSize: Normal
     defaultStorageOrientation: Vertical
     grid:
-    - 0,0,7,1
+    - 0,0,3,1
+    - 5,0,8,1
     storageOpenSound:
       collection: BF_Magpouch_Open
       params:
@@ -42,7 +43,7 @@
   parent: ClothingBeltMilitaryWebbingUS
   id: ClothingBeltMilitaryWebbingDE
   name: MOBAST belt rig
-  description: You feel like a kangaroo.
+  description: I feel like a kangaroo wearing this.
   components:
   - type: Sprite
     sprite: _Battlefield14/Clothing/Belt/de_webbing.rsi
@@ -53,7 +54,7 @@
   parent: ClothingBeltMilitaryWebbingUS
   id: ClothingBeltMilitaryWebbingRU
   name: smersh belt rig
-  description: A nice piece of kit, pairs well with a gorka.
+  description: A nice piece of kit, highly sought by western larpers, pairs well with a gorka.
   components:
   - type: Sprite
     sprite: _Battlefield14/Clothing/Belt/smersh.rsi
