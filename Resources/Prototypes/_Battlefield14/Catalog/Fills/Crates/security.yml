@@ -430,6 +430,32 @@
     access: [["PACTSoldier"]]
 
 - type: entity
+  id: CrateSecgearPACTFilledRPK74
+  suffix: Filled, RPK-74
+  parent: CrateSecgear
+  name: RPK-74 crate
+  components:
+  - type: StorageFill
+    contents:
+        - id: BF14WeaponCaseLongRURPK74
+          amount: 3
+  - type: AccessReader
+    access: [["PACTSoldier"]]
+
+- type: entity
+  id: CrateSecgearPACTFilledRPK74M
+  suffix: Filled, RPK-74M
+  parent: CrateSecgear
+  name: RPK-74M crate
+  components:
+  - type: StorageFill
+    contents:
+        - id: BF14WeaponCaseLongRURPK74M
+          amount: 3
+  - type: AccessReader
+    access: [["PACTSoldier"]]
+
+- type: entity
   id: CrateSecgearPACTFilledSV98
   suffix: Filled, SV-98
   parent: CrateSecgear

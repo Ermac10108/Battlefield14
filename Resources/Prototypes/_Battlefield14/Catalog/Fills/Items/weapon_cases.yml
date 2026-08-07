@@ -568,6 +568,28 @@
 
 - type: entity
   parent: WeaponCaseLong
+  id: BF14WeaponCaseLongRURPK74
+  suffix: RPK-74
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponRifleRURPK74
+    - id: MagazineRifleRPK74TracerGreen
+      amount: 6
+
+- type: entity
+  parent: WeaponCaseLong
+  id: BF14WeaponCaseLongRURPK74M
+  suffix: RPK-74M
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponRifleRURPK74M
+    - id: MagazineRifleRPK74BlackTracerGreen
+      amount: 6
+
+- type: entity
+  parent: WeaponCaseLong
   id: BF14WeaponCaseLongRUPKM
   suffix: PKM
   components:

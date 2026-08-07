@@ -277,6 +277,26 @@
         amount: 8
 
 - type: entity
+  id: ClothingBeltMilitaryWebbingRUFilledRPK74
+  parent: ClothingBeltMilitaryWebbingRU
+  suffix: Filled RPK74
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineRifleRPK74TracerGreen
+        amount: 8
+
+- type: entity
+  id: ClothingBeltMilitaryWebbingRUFilleRPK74Black
+  parent: ClothingBeltMilitaryWebbingRU
+  suffix: Filled RPK74M
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineRifleRPK74BlackTracerGreen
+        amount: 8
+
+- type: entity
   id: ClothingBeltMilitaryWebbingRUFilled4GaugeShrap10Slug357Speeloader
   parent: ClothingBeltMilitaryWebbingRU
   suffix: Filled, 4 gauge, Shrap10/Slug, .357, Speedloader
