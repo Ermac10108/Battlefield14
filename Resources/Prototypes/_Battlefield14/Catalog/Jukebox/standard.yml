@@ -114,6 +114,18 @@
    path:
     path: /Audio/_Battlefield14/Jukebox/panzermensch.ogg
 
+ - type: jukebox
+   id: dontfearthereaper
+   name: Blue Oyster Cult - Don't Fear the Reaper
+   path:
+    path: /Audio/_Battlefield14/Jukebox/dontfearthereaper_mono.ogg
+
+ - type: jukebox
+   id: killchain
+   name: Bolt Thrower - The Killchain
+   path:
+    path: /Audio/_Battlefield14/Jukebox/killchain.ogg
+
 #region Eastern / east associated songs
 
  - type: jukebox
