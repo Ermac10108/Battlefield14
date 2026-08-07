@@ -41,6 +41,10 @@
       - id: BoxGrenadesK52
         name: Sarin gas grenades
         points: 2
+      - id: CrateSecgearPACTFilledRPK74M
+        name: RPK-74M x3
+        points: 2 # 1p for RGF when they are added, since VDV already gets RPK-2016s
+        amount: 1
       - id: BoxGrenadesK51
         name: CS gas grenades
         points: 1

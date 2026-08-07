@@ -111,7 +111,7 @@
     explosionType: Thermobaric
     totalIntensity: 90
     intensitySlope: 5
-    maxIntensity: 4
+    maxIntensity: 6
     maxTileBreak: 0
   - type: StaminaDamageOnCollide
     damage: 200 # It's a fucking rocket
@@ -660,8 +660,8 @@
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Thermobaric
-    totalIntensity: 80
-    intensitySlope: 6
+    totalIntensity: 90
+    intensitySlope: 5
     maxIntensity: 6
     maxTileBreak: 0
   - type: StaminaDamageOnCollide
