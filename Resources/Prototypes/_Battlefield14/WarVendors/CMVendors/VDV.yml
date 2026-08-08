@@ -28,7 +28,7 @@
       - id: EVAKitCombatRU
         name: voidsuit
         recommended: true
-      - id: ClothingOuterArmorPlateCarrierBlack
+      - id: ClothingOuterArmorPlateCarrier6B45
         name: plate carrier
       - id: ArmorPlateMediumPackaged
     - name: 'Personal Medicine'
@@ -207,9 +207,9 @@
         amount: 10
       - id: DoubleEmergencyOxygenTankFilled
         amount: 50
-      - id: ClothingHeadHelmetSoftsuitNasa
+      - id: ClothingHeadHelmetSoftsuitVKS
         amount: 50
-      - id: ClothingOuterSoftsuitNASA
+      - id: ClothingOuterSoftsuitVKS
         amount: 50
 
 #region ammo

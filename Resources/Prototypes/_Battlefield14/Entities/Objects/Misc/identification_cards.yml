@@ -654,6 +654,50 @@
   - type: PresetIdCard
     job: RKhBMedic
 
+#region OMON
+
+- type: entity
+  parent: IDCardStandard
+  id: OMONLieutenantIDCard
+  name: OMON ID card
+  suffix: lieutenant
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+  - type: Item
+    heldPrefix: silver
+  - type: PresetIdCard
+    job: OMONLieutenant
+
+- type: entity
+  parent: IDCardStandard
+  id: OMONSquadLeaderIDCard
+  name: OMON ID card
+  suffix: senior rifleman
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+  - type: Item
+    heldPrefix: silver
+  - type: PresetIdCard
+    job: OMONSquadLeader
+
+- type: entity
+  parent: IDCardStandard
+  id: OMONRiflemanIDCard
+  name: OMON ID card
+  suffix: rifleman
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+  - type: Item
+    heldPrefix: silver
+  - type: PresetIdCard
+    job: OMONRifleman
+
 #region FSB
 
 - type: entity

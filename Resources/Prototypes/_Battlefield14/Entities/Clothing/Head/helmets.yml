@@ -4,6 +4,8 @@
   abstract: true
   description: This isnt for catching shrap or rounds, its made to keep your grey matter from grossing out your buddies.
   components:
+  - type: Item
+    size: Normal
   - type: Armor
     modifiers:
       flatReductions:
@@ -16,7 +18,7 @@
 #region US
 
 - type: entity
-  parent: ClothingHeadHelmetBasic
+  parent: BF14ClothingHeadHelmetBasic
   id: ClothingHeadHatHelmetUS
   name: american camo helmet
   description: This isnt for catching shrap or rounds, its made to keep your grey matter from grossing out your buddies.
