@@ -51,3 +51,15 @@
   background: /Textures/_Battlefield14/LobbyScreens/streetwar.png
 #  name: street war
 #  artist: Belwoods and JoeHammad
+
+#- type: lobbyBackground # IDF, not yet
+#  id: BackgroundWestBank
+#  background: /Textures/_Battlefield14/LobbyScreens/westbank.jpg
+#  name: west bank
+#  artist: IDF and Ivomink
+
+#- type: lobbyBackground # GIGN, not yet
+#  id: BackgroundGIGN
+#  background: /Textures/_Battlefield14/LobbyScreens/gigncrowd.jpg
+# name: gign crowd
+# artist: brolis and ivomink
