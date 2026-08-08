@@ -32,6 +32,10 @@ department-BW-description = Third time's the charm.
 
 ## RU
 
+## RGF
+department-RGF-name = Russian Ground Forces (RGF)
+department-RGF-description = ZA RODENU.
+
 ## VDV
 department-VDV-name = Russian Airborne Forces (VDV)
 department-VDV-description = S NEBA PRIVET.

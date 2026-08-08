@@ -116,6 +116,20 @@
 
 #region RU
 
+#region RGF
+
+- type: playTimeTracker
+  id: JobRGFLieutenant
+
+- type: playTimeTracker
+  id: JobRGFSquadLeader
+
+- type: playTimeTracker
+  id: JobRGFRifleman
+
+- type: playTimeTracker
+  id: JobRGFAutomaticRifleman
+
 #region VDV
 
 - type: playTimeTracker

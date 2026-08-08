@@ -86,6 +86,20 @@
 #region RU
 
 - type: department
+  id: RGF
+  name: department-RGF-name
+  description: department-RGF-description
+  color: "#a02829"
+  weight: 66
+  roles:
+  - RGFLieutenant
+  - RGFSquadLeader
+  - RGFRifleman
+  - RGFAutomaticRifleman
+#  - RGFMedic
+#  - RGFRecon
+
+- type: department
   id: VDV
   name: department-VDV-name
   description: department-VDV-description
