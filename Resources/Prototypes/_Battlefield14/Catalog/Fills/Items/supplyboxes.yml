@@ -64,6 +64,18 @@
   - type: StorageFill
     contents:
       - id: MagazineBox545x39Big
+      - id: BoxMagazineAK74Black
+      - id: BoxMagazineAK74BlackTracerGreen
+      - id: MagazineBox762x39Big
+
+- type: entity
+  id: SupplyBoxAmmoRUFilledVDV
+  parent: SupplyBoxAmmoRU
+  suffix: VDV, Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineBox545x39Big
       - id: BoxMagazineAK74
       - id: BoxMagazineASVALShort
       - id: MagazineBox762x39Big

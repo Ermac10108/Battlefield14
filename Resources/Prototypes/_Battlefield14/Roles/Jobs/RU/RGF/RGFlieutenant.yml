@@ -1,29 +1,34 @@
 - type: job
-  id: VDVAutomaticRifleman
-  name: job-name-vdv-automatic-rifleman
-  description: job-description-vdv-automatic-rifleman
-  playTimeTracker: JobVDVAutomaticRifleman
-  weight: 76
-  startingGear: VDVAutomaticRiflemanGear
+  id: RGFLieutenant
+  name: job-name-rgf-lieutenant
+  description: job-description-rgf-lieutenant
+  playTimeTracker: JobRGFLieutenant
+  weight: 78
+  startingGear: RGFLieutenantGear
   alwaysUseSpawner: true
-  icon: "JobIconPACTSupport"
-  requireAdminNotify: false
+  icon: "JobIconPACTCaptain"
+  requireAdminNotify: true
   supervisors: job-supervisors-rugov
   canBeAntag: false
   special:
   - !type:AddLanguageSpecial
     languagesSpoken:
     - Russian
+    - Esperanto
     languagesUnderstood:
     - Russian
     - Ukrainian
+    - Esperanto
   - !type:AddComponentSpecial
     components:
     - type: NpcFactionMember
       factions:
       - VDV
     - type: ChatRank
-      rank: BF-rank-corporal
+      rank: BF-rank-lieutenant
+    - type: CMVendorUser
+      id: RGFLieutenant
+      points: 4
   - !type:AddImplantSpecial
     implants: [ TrackingImplantPACTRU ]
   access:
@@ -33,31 +38,32 @@
   - Mercenary # Frontier
   - Captain # Frontier
   - PACTCommon
+  - PACTCommand
   - PACTMaintenance
   - PACTSoldier
   - PACTArmory
 
 - type: startingGear
-  id: VDVAutomaticRiflemanGear
+  id: RGFLieutenantGear
   equipment:
-    id: VDVAutomaticRiflemanPDA
-    ears: ClothingHeadsetAltRU
-    belt: ClothingBeltMilitaryWebbingRUFilledAK74blackdrumTracerGreen
-    jumpsuit: ClothingUniformJumpsuitCamoRUEMR
-    head: ClothingHeadHatHelmetRU6b47Riot
-    outerClothing: ClothingOuterArmorPlateCarrier6B45Heavy
+    id: RGFLieutenantPDA
+    ears: ClothingHeadsetAltRUCommand
+    belt: ClothingBeltMilitaryWebbingRUFilledAK12TracerGreen
+    jumpsuit: ClothingUniformJumpsuitRUGorka
+    head: ClothingHeadHatHelmetRU6b47
+    outerClothing: ClothingOuterArmorPlateCarrier6B45
     shoes: ClothingShoesBootsJackFilledRU
-    neck: ClothingNeckIFFtapeWhite
-    suitstorage: WeaponRifleRURPK2016
+    suitstorage: WeaponRifleRUAK12Magnified
     pocket1: PouchFirstAidFilled
-    pocket2: PouchGrenadesFilledVDVSupport
+    pocket2: PouchGrenadesFilledRGFRifleman
     rightarmband: ClothingArmbandThighHolsterFilledRU
   storage:
     back:
-    - SupplyBoxAmmoRUFilledVDV
+    - ArmorPlateMediumPackaged
     - MagazinePistolMP443
     - MagazinePistolMP443
     - FlashlightMilitaryAlt
     - ClothingMaskGasRussiaPMK4
     - Tourniquet
     - Zipties
+    - CMVendRGFWarVendorLieutenantTablet

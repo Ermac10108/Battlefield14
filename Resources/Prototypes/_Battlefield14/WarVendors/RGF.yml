@@ -1,7 +1,7 @@
 - type: entity
   parent: ColMarTechBase
-  id: CMVendPACTVDVWarVendor
-  name: VDV war vendor
+  id: CMVendPACTRGFWarVendor
+  name: RGF war vendor
   description: Please sir, may I have a little more?
   suffix: ColMarTech
   components:
@@ -77,7 +77,7 @@
         amount: 4
     - name: Weapons
       entries:
-      - id: WeaponRifleRUAK12
+      - id: WeaponRifleRUAK74M
         amount: 50
       - id: WeaponRifleRUAK203
         amount: 5
@@ -113,17 +113,17 @@
       entries:
       - id: RusfedFlagFolded
         amount: 3
-      - id: WeaponSniperRUSVDSObrez
+      - id: WeaponSniperRUSVDObrez
         amount: 1
-      - id: MagazineSniperSVDS
+      - id: MagazineSniperSVD
         amount: 3
 
 #region gear
 
 - type: entity
   parent: ColMarTechBase
-  id: CMVendPACTVDVWarVendorGear
-  name: VDV gear vendor
+  id: CMVendPACTRGFWarVendorGear
+  name: RGF gear vendor
   description: SLEDGEHAMMERRR.
   suffix: ColMarTech
   components:
@@ -164,9 +164,9 @@
       - id: OffensiveGrenadeRURGD5
         amount: 10
       - id: DefensiveGrenadeRUF1
-        amount: 5
+        amount: 8
       - id: ImpactGrenadeRURGO
-        amount: 5
+        amount: 2
       - id: FlashbangGrenadeRUZarya
         amount: 20
       - id: SmokeGrenadeRURDG
@@ -201,23 +201,13 @@
         amount: 3
       - id: Boombox
         amount: 2
-    - name: EVA
-      entries:
-      - id: JetpackBlackFilled
-        amount: 10
-      - id: DoubleEmergencyOxygenTankFilled
-        amount: 50
-      - id: ClothingHeadHelmetSoftsuitVKS
-        amount: 50
-      - id: ClothingOuterSoftsuitVKS
-        amount: 50
 
 #region ammo
 
 - type: entity
   parent: ColMarTechBase
-  id: CMVendPACTVDVWarVendorAmmo
-  name: VDV ammo vendor
+  id: CMVendPACTRGFWarVendorAmmo
+  name: RGF ammo vendor
   description: Bang Bang Bang!
   suffix: ColMarTech
   components:
@@ -237,15 +227,11 @@
     sections:
     - name: Magazine boxes
       entries:
-      - id: BoxMagazineAK12
-        amount: 1
-      - id: BoxMagazineAK12TracerGreen
-        amount: 1
-      - id: BoxMagazineAK74
+      - id: BoxMagazineAK74BlackTracerGreen
+        amount: 2
+      - id: BoxMagazineAK74Black
         amount: 3
       - id: BoxMagazineVityaz
-        amount: 5
-      - id: BoxMagazineASVALShort
         amount: 5
       - id: BoxMagazineAK203
         amount: 2
@@ -265,6 +251,8 @@
         amount: 5
       - id: MagazineBox762x54r
         amount: 4
+      - id: MagazineBox762x54rBig
+        amount: 2
       - id: MagazineBox9x19mmBig
         amount: 5
       - id: ShellBoxBF12GaugeBuckshot
@@ -275,52 +263,3 @@
         amount: 10
       - id: CrayonBox
         amount: 1
-
-#region ships
-
-- type: entity
-  parent: ColMarTechBase
-  id: CMVendPACTVDVWarVendorShips
-  name: VDV ship LPC vendor
-  description: Time to fly this into anti-air defences.
-  suffix: ColMarTech
-  components:
-  - type: Sprite
-    sprite: _Battlefield14/Structures/armoury.rsi
-    layers:
-    - state: "off"
-      map: ["enum.VendingMachineVisualLayers.Base"]
-    - state: "normal-unshaded"
-      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
-      shader: unshaded
-  - type: AccessReader
-    access: [["PACTCommon"]]
-  - type: CMAutomatedVendor
-    access:
-    - "PACTCommon"
-    sections:
-    - name: Transports
-      entries:
-      - id: ShipVoucherKTV1
-        amount: 8
-
-- type: entity
-  parent: CMVendPACTVDVWarVendorShips
-  id: CMVendPACTVDVWarVendorShipsExtended
-  name: VDV extended ship LPC vendor
-  suffix: ColMarTech, extended
-  components:
-  - type: CMAutomatedVendor
-    access:
-    - "PACTCommon"
-    sections:
-    - name: Transports
-      entries:
-      - id: ShipVoucherKTV1
-        amount: 8
-      - id: ShipVoucherBMD4
-        name: BMD-4A IFV
-        amount: 5
-      - id: ShipVoucherBMD4A
-        name: BMD-4A (anti-air)
-        amount: 5

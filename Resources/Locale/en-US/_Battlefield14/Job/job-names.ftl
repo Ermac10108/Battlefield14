@@ -36,6 +36,13 @@ job-name-bw-recon = Bundeswehr Aufklarer
 
 #Russian Federation#
 
+job-name-rgf-lieutenant = RGF Platoon Commander
+job-name-rgf-squadleader = RGF Senior Rifleman
+job-name-rgf-rifleman = RGF Rifleman
+job-name-rgf-automatic-rifleman = RGF Automatic Rifleman
+job-name-rgf-medic = RGF Combat Medic
+job-name-rgf-recon = RGF Recon Scout
+
 job-name-vdv-lieutenant = VDV Platoon Commander
 job-name-vdv-squadleader = VDV Senior Rifleman
 job-name-vdv-rifleman = VDV Rifleman

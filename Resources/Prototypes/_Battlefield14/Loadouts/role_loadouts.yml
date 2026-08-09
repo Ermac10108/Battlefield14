@@ -379,6 +379,87 @@
 
 ## RU
 
+#region RGF
+
+- type: roleLoadout
+  id: JobRGFLieutenant
+  groups:
+  - BF_SoldierGlassesGreen
+  - BF_CombatMasks
+  - BF_SoldierGloves
+  - BF_PACTIFF
+  - BF_HelmetAttachmentPACT
+  - BF_BackpacksBlack
+  - BF_MiscItemsPACT
+  - BF_PistolsRGFSL
+  - BF_Map
+  - ContractorWallet
+
+- type: roleLoadout
+  id: JobRGFSquadLeader
+  groups:
+  - BF_SoldierGlassesGreen
+  - BF_CombatMasks
+  - BF_SoldierGloves
+  - BF_PACTIFF
+  - BF_HelmetAttachmentPACT
+  - BF_BackpacksBlack
+  - BF_MiscItemsPACT
+  - BF_PistolsRGFSL
+  - BF_Map
+  - ContractorWallet
+
+- type: roleLoadout
+  id: JobRGFRifleman
+  groups:
+  - BF_SoldierGlassesGreen
+  - BF_CombatMasks
+  - BF_SoldierGloves
+  - BF_PACTIFF
+  - BF_HelmetAttachmentPACT
+  - BF_BackpacksBlack
+  - BF_MiscItemsPACT
+  - BF_Map
+  - ContractorWallet
+
+- type: roleLoadout
+  id: JobRGFAutomaticRifleman
+  groups:
+  - BF_SoldierGlassesGreen
+  - BF_CombatMasks
+  - BF_SoldierGloves
+  - BF_PACTIFF
+  - BF_HelmetAttachmentPACT
+  - BF_BackpacksBlack
+  - BF_MiscItemsPACT
+  - BF_PistolsVDVSL
+  - BF_Map
+  - ContractorWallet
+
+- type: roleLoadout
+  id: JobRGFMedic
+  groups:
+  - BF_CombatMasks
+  - BF_SoldierGloves
+  - BF_PACTIFF
+  - BF_HelmetAttachmentPACT
+  - BF_BackpacksBlack
+  - BF_MiscItemsPACT
+  - BF_Map
+  - ContractorWallet
+
+- type: roleLoadout
+  id: JobRGFRecon
+  groups:
+  - BF_SoldierGlassesGreen
+  - BF_CombatMasks
+  - BF_SoldierGloves
+  - BF_PACTIFF
+  - BF_BackpacksBlack
+  - BF_MiscItemsPACT
+  - BF_Map
+  - ContractorWallet
+
 #region VDV
 
 - type: roleLoadout
@@ -441,12 +522,12 @@
   - ContractorWallet
 
 - type: roleLoadout
-  id: JobVDVRecon
+  id: JobVDVMedic
   groups:
-  - BF_SoldierGlassesGreen
   - BF_CombatMasks
   - BF_SoldierGloves
   - BF_PACTIFF
+  - BF_HelmetAttachmentPACT
   - BF_VDVHead
   - BF_BackpacksBlack
   - BF_MiscItemsPACT
@@ -454,12 +535,12 @@
   - ContractorWallet
 
 - type: roleLoadout
-  id: JobVDVMedic
+  id: JobVDVRecon
   groups:
+  - BF_SoldierGlassesGreen
   - BF_CombatMasks
   - BF_SoldierGloves
   - BF_PACTIFF
-  - BF_HelmetAttachmentPACT
   - BF_VDVHead
   - BF_BackpacksBlack
   - BF_MiscItemsPACT
