@@ -96,8 +96,8 @@
   - RGFSquadLeader
   - RGFRifleman
   - RGFAutomaticRifleman
-#  - RGFMedic
-#  - RGFRecon
+  - RGFMedic
+  - RGFRecon
 
 - type: department
   id: VDV

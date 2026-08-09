@@ -576,13 +576,13 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineSniperSVDS
+        startingItem: MagazineSniperSVD
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazineSniperSVDS
+            - MagazineSniperSVD
       gun_chamber:
         name: Chamber
         startingItem: BF_CartridgeRifle762x54r
@@ -805,13 +805,13 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineSniperSVDS
+        startingItem: MagazineSniperSVD
         insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - MagazineSniperSVDS
+            - MagazineSniperSVD
       gun_chamber:
         name: Chamber
         startingItem: BF_CartridgeRifle762x54r

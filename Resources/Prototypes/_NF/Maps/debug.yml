@@ -68,6 +68,8 @@
             RGFSquadLeader: [-1, -1]
             RGFRifleman: [-1, -1]
             RGFAutomaticRifleman: [-1, -1]
+            RGFMedic: [-1, -1]
+            RGFRecon: [-1, -1]
             VDVLieutenant: [-1, -1]
             VDVSquadLeader: [-1, -1]
             VDVRifleman: [-1, -1]
