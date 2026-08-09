@@ -107,7 +107,7 @@
         - BF_CartridgeRifle556x45
     capacity: 30
   - type: Sprite
-    sprite: _Battlefield14/Objects/Weapons/Guns/Ammunition/Magazines/Rifle/G36.rsi
+    sprite: _Battlefield14/Objects/Weapons/Guns/Ammunition/Magazines/Rifle/G36clear.rsi
     layers:
     - state: base
       map: ["enum.GunVisualLayers.Base"]
@@ -115,8 +115,8 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: MagazineVisuals
     magState: mag
-    steps: 3
-    zeroVisible: false
+    steps: 9
+    zeroVisible: true
   - type: Appearance
   - type: ExtendDescription
     descriptionList:
@@ -154,6 +154,10 @@
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 3
+    zeroVisible: false
   - type: BallisticAmmoProvider
     proto: BF_CartridgeRifle556x45
     mayTransfer: true
