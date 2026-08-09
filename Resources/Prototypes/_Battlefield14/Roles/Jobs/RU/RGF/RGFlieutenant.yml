@@ -46,7 +46,7 @@
 - type: startingGear
   id: RGFLieutenantGear
   equipment:
-    id: VDVLieutenantPDA
+    id: RGFLieutenantPDA
     ears: ClothingHeadsetAltRUCommand
     belt: ClothingBeltMilitaryWebbingRUFilledAK12TracerGreen
     jumpsuit: ClothingUniformJumpsuitRUGorka

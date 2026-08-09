@@ -40,7 +40,7 @@
 - type: startingGear
   id: RGFReconGear
   equipment:
-    id: VDVReconPDA
+    id: RGFReconPDA
     ears: ClothingHeadsetAltRU
     belt: ClothingBeltMilitaryWebbingRUFilledSVD
     jumpsuit: ClothingUniformJumpsuitRUGorka

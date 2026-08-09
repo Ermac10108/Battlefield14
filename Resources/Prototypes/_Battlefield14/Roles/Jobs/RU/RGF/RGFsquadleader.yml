@@ -43,7 +43,7 @@
 - type: startingGear
   id: RGFSquadLeaderGear
   equipment:
-    id: VDVSquadLeaderPDA
+    id: RGFSquadLeaderPDA
     ears: ClothingHeadsetAltRU
     belt: ClothingBeltMilitaryWebbingRUFilledAK74Black
     jumpsuit: ClothingUniformJumpsuitRUGorka

@@ -40,7 +40,7 @@
 - type: startingGear
   id: RGFAutomaticRiflemanGear
   equipment:
-    id: VDVAutomaticRiflemanPDA
+    id: RGFAutomaticRiflemanPDA
     ears: ClothingHeadsetAltRU
     belt: ClothingBeltMilitaryWebbingRU
     jumpsuit: ClothingUniformJumpsuitRUGorka
