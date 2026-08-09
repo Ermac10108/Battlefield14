@@ -129,6 +129,16 @@
       amount: 4
 
 - type: entity
+  parent: PouchMagsLarge
+  id: PouchMagsLargeFilledAK74Black
+  suffix: Filled, AK74, black
+  components:
+  - type: StorageFill
+    contents:
+    - id: MagazineRifleAK74Black
+      amount: 4
+
+- type: entity
   parent: PouchMagsPistol
   id: PouchMagsPistolFilledUSP45
   suffix: Filled, USP45

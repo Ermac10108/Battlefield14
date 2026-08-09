@@ -65,11 +65,10 @@
     back:
     - SupplyBoxMedicalFilled
     - DefibrillatorCompactBF
-    - BoxMRE
     - MedkitAdvancedFilled
     - CrowbarRed
     - ClothingMaskGasM40
     - PillCanisterHyronalin
     - Tourniquet
     - Zipties
-    - MedicationBoxPillsHyronalin
+    - BiofoamCanisterRedDARPA

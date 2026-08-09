@@ -27,14 +27,21 @@ job-name-uspd-swat-officer = SWAT Officer
 
 #German Federation#
 
-job-name-bw-lieutenant = Bundeswehr Platoon Commander
-job-name-bw-squadleader = Bundeswehr Squad Leader
-job-name-bw-rifleman = Bundeswehr Rifleman
-job-name-bw-automatic-rifleman = Bundeswehr Automatic Rifleman
-job-name-bw-medic = Bundeswehr Sanitater
-job-name-bw-recon = Bundeswehr Aufklarer
+job-name-bw-lieutenant = BDW Platoon Commander
+job-name-bw-squadleader = BDW Squad Leader
+job-name-bw-rifleman = BDW Rifleman
+job-name-bw-automatic-rifleman = BDW Automatic Rifleman
+job-name-bw-medic = BDW Sanitater
+job-name-bw-recon = BDW Aufklarer
 
 #Russian Federation#
+
+job-name-rgf-lieutenant = RGF Platoon Commander
+job-name-rgf-squadleader = RGF Senior Rifleman
+job-name-rgf-rifleman = RGF Rifleman
+job-name-rgf-automatic-rifleman = RGF Automatic Rifleman
+job-name-rgf-medic = RGF Combat Medic
+job-name-rgf-recon = RGF Recon Scout
 
 job-name-vdv-lieutenant = VDV Platoon Commander
 job-name-vdv-squadleader = VDV Senior Rifleman

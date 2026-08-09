@@ -193,6 +193,16 @@
 #region DE
 
 - type: entity
+  id: ClothingBeltMilitaryWebbingDEFilledG28
+  parent: ClothingBeltMilitaryWebbingDE
+  suffix: Filled G28
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineRifleG28
+        amount: 8
+
+- type: entity
   id: ClothingBeltMilitaryWebbingDEFilledG36
   parent: ClothingBeltMilitaryWebbingDE
   suffix: Filled G36
@@ -313,7 +323,7 @@
 - type: entity
   id: ClothingBeltMilitaryWebbingRUFilledAK74blackdrum
   parent: ClothingBeltMilitaryWebbingRU
-  suffix: Filled 75 round drum
+  suffix: Filled, 75 round drum
   components:
   - type: StorageFill
     contents:
@@ -323,7 +333,7 @@
 - type: entity
   id: ClothingBeltMilitaryWebbingRUFilledAK74blackdrumTracerGreen
   parent: ClothingBeltMilitaryWebbingRU
-  suffix: Filled 75 round drum green tracer
+  suffix: Filled, 75 round drum green tracer
   components:
   - type: StorageFill
     contents:
@@ -333,7 +343,7 @@
 - type: entity
   id: ClothingBeltMilitaryWebbingRUFilledAKMS
   parent: ClothingBeltMilitaryWebbingRU
-  suffix: Filled AKMS
+  suffix: Filled, AKMS
   components:
   - type: StorageFill
     contents:
@@ -343,7 +353,7 @@
 - type: entity
   id: ClothingBeltMilitaryWebbingRUFilledVityaz
   parent: ClothingBeltMilitaryWebbingRU
-  suffix: Filled Vityaz
+  suffix: Filled, Vityaz
   components:
   - type: StorageFill
     contents:
@@ -353,7 +363,7 @@
 - type: entity
   id: ClothingBeltMilitaryWebbingRUFilledASVAL
   parent: ClothingBeltMilitaryWebbingRU
-  suffix: Filled AS-VAL
+  suffix: Filled, AS-VAL
   components:
   - type: StorageFill
     contents:
@@ -363,11 +373,21 @@
 - type: entity
   id: ClothingBeltMilitaryWebbingRUFilledASVALShort
   parent: ClothingBeltMilitaryWebbingRU
-  suffix: Filled AS-VAL short
+  suffix: Filled, AS-VAL short
   components:
   - type: StorageFill
     contents:
       - id: MagazineRifleASVALShort
+        amount: 8
+
+- type: entity
+  id: ClothingBeltMilitaryWebbingRUFilledSVD
+  parent: ClothingBeltMilitaryWebbingRU
+  suffix: Filled, SVD
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineSniperSVD
         amount: 8
 
 - type: entity

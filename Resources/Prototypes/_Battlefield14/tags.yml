@@ -173,6 +173,9 @@
   id: MagazineRifleG36
 
 - type: Tag
+  id: MagazineRifleHK417
+
+- type: Tag
   id: MagazineRifleSTANAG
 
 - type: Tag
@@ -215,7 +218,7 @@
   id: MagazineSniperM107
 
 - type: Tag
-  id: MagazineSniperSVDS
+  id: MagazineSniperSVD
 
 - type: Tag
   id: MagazinePistolFiveSeven

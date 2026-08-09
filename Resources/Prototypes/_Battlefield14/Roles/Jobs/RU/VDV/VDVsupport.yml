@@ -54,7 +54,7 @@
     rightarmband: ClothingArmbandThighHolsterFilledRU
   storage:
     back:
-    - SupplyBoxAmmoRUFilled
+    - SupplyBoxAmmoRUFilledVDV
     - MagazinePistolMP443
     - MagazinePistolMP443
     - FlashlightMilitaryAlt
