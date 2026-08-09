@@ -173,6 +173,9 @@
   id: MagazineRifleG36
 
 - type: Tag
+  id: MagazineRifleHK417
+
+- type: Tag
   id: MagazineRifleSTANAG
 
 - type: Tag
