@@ -115,7 +115,7 @@
         amount: 3
       - id: WeaponSniperRUSVDSObrez
         amount: 1
-      - id: MagazineSniperSVDS
+      - id: MagazineSniperSVD
         amount: 3
 
 #region gear
