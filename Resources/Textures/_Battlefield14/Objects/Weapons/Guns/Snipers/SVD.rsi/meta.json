@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-NC-SA-4.0",
-  "copyright": "Made by WillyBillyGilly and hyenh, inhands/worn by JoeHammad, permission given for use in the Battlefield14 project. Do not re-use these sprites without permission from WillyBillyGilly.",
+  "copyright": "Made by WillyBillyGilly, permission given for use in the Battlefield14 project. Do not re-use these sprites without permission from WillyBillyGilly.",
   "size": {
     "x": 64,
     "y": 32
@@ -11,7 +11,16 @@
       "name": "icon"
     },
     {
+      "name": "icon-svds"
+    },
+    {
       "name": "base"
+    },
+    {
+      "name": "stock-svd"
+    },
+    {
+      "name": "stock-svds"
     },
     {
       "name": "bolt-open"
