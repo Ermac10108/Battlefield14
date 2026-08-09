@@ -193,6 +193,16 @@
 #region DE
 
 - type: entity
+  id: ClothingBeltMilitaryWebbingDEFilledG28
+  parent: ClothingBeltMilitaryWebbingDE
+  suffix: Filled G28
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineRifleG28
+        amount: 8
+
+- type: entity
   id: ClothingBeltMilitaryWebbingDEFilledG36
   parent: ClothingBeltMilitaryWebbingDE
   suffix: Filled G36
