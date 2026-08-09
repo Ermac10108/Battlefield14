@@ -27,12 +27,12 @@ job-name-uspd-swat-officer = SWAT Officer
 
 #German Federation#
 
-job-name-bw-lieutenant = Bundeswehr Platoon Commander
-job-name-bw-squadleader = Bundeswehr Squad Leader
-job-name-bw-rifleman = Bundeswehr Rifleman
-job-name-bw-automatic-rifleman = Bundeswehr Automatic Rifleman
-job-name-bw-medic = Bundeswehr Sanitater
-job-name-bw-recon = Bundeswehr Aufklarer
+job-name-bw-lieutenant = BDW Platoon Commander
+job-name-bw-squadleader = BDW Squad Leader
+job-name-bw-rifleman = BDW Rifleman
+job-name-bw-automatic-rifleman = BDW Automatic Rifleman
+job-name-bw-medic = BDW Sanitater
+job-name-bw-recon = BDW Aufklarer
 
 #Russian Federation#
 
