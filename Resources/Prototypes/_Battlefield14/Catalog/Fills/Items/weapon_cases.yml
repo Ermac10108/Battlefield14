@@ -391,7 +391,7 @@
     - id: MagazineRifleG3
       amount: 5
 
-#region Machine guns, US
+#region Machine guns, DE
 
 - type: entity
   parent: WeaponCaseLong
@@ -403,6 +403,16 @@
     - id: WeaponMachineGunDEMG3
     - id: MagazineBeltBoxMG3Short
       amount: 2
+
+- type: entity
+  parent: WeaponCaseLong
+  id: BF14WeaponCaseLongDEMG36
+  suffix: MG36
+  components:
+  - type: StorageFill
+    contents:
+    - id: WeaponRifleDEMG36
+    - id: MagazineRifleG36DoubleDrumTracerRed
 
 #region SMGs, RU
 
