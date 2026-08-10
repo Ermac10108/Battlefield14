@@ -39,6 +39,11 @@ namespace Content.Client.Paper.UI
 
         private bool _drawingVisible = true; // BF14
 
+        // BF14: Textless map surfaces only allow drawing while a pen/crayon is held in the active hand,
+        // and the drawn color is taken from that instrument. Set by the BUI as the active hand changes.
+        private bool _mapDrawingEnabled;
+        private Color _mapDrawColor = Color.Black;
+
         // <summary>
         // Size of resize handles around the paper
         private const int DRAG_MARGIN_SIZE = 16;
@@ -318,21 +323,22 @@ namespace Content.Client.Paper.UI
             WrittenTextLabel.Visible = !isEditing && state.Text.Length > 0;
             BlankPaperIndicator.Visible = !isEditing && state.Text.Length == 0;
 
-            // Update the freehand drawing surface with the committed strokes and draw color. BF14
+            // Update the freehand drawing surface with the committed strokes. BF14
             DrawingSurface.Strokes = state.Strokes;
-            DrawingSurface.DrawColor = state.Color;
 
             if (_textless)
             {
-                // Textless drawing surfaces (maps) never show the blank indicator, text editor or save button, and drawing is always available. BF14
+                // Textless drawing surfaces (maps) never show the blank indicator, text editor or save button,
+                // and drawing is only enabled while a pen/crayon is held in the active hand. BF14
                 BlankPaperIndicator.Visible = false;
                 WrittenTextLabel.Visible = false;
                 InputContainer.Visible = false;
                 SaveButton.Visible = false;
-                DrawingSurface.DrawingEnabled = true;
+                ApplyMapDrawingState();
             }
             else
             {
+                DrawingSurface.DrawColor = state.Color;
                 DrawingSurface.DrawingEnabled = isEditing;
             }
 
@@ -347,6 +353,25 @@ namespace Content.Client.Paper.UI
         private void OnCanvasStroke(DrawStroke stroke) // BF14
         {
             OnStroke?.Invoke(stroke);
+        }
+
+        /// <summary>
+        ///     BF14: Sets whether a pen/crayon is available for drawing on a textless map surface
+        ///     and which color should be used. For regular paper this has no effect.
+        /// </summary>
+        public void SetMapDrawingState(bool hasInstrument, Color color)
+        {
+            _mapDrawingEnabled = hasInstrument;
+            _mapDrawColor = color;
+
+            if (_textless)
+                ApplyMapDrawingState();
+        }
+
+        private void ApplyMapDrawingState()
+        {
+            DrawingSurface.DrawColor = _mapDrawColor;
+            DrawingSurface.DrawingEnabled = _mapDrawingEnabled;
         }
 
         /// <summary>
