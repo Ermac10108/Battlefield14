@@ -17,6 +17,11 @@ public sealed partial class DrawCanvas : Control
     private bool _panning;
     private Vector2 _lastPanPosition;
 
+    // BF14: For map surfaces the strokes are stored in the map's natural pixel space and scaled
+    // to the current display size, so they stay anchored to the map as the window resizes.
+    private bool _scalesWithContent;
+    private Vector2 _contentSize = Vector2.One;
+
     public Color DrawColor { get; set; } = Color.Black;
 
     public List<DrawStroke> Strokes { get; set; } = new();
@@ -42,6 +47,30 @@ public sealed partial class DrawCanvas : Control
         HorizontalExpand = true;
         VerticalExpand = true;
         DrawingEnabled = false;
+    }
+
+    /// <summary>
+    ///     BF14: Sets the natural pixel size of the map content. When set, strokes are stored in
+    ///     this canonical space and scaled to the current display size as the window resizes.
+    /// </summary>
+    public void SetContentSize(Vector2 size)
+    {
+        _contentSize = size;
+        _scalesWithContent = true;
+        MinSize = size;
+    }
+
+    private Vector2 ContentScale
+    {
+        get
+        {
+            if (!_scalesWithContent)
+                return Vector2.One;
+
+            var sx = Size.X > 0 ? Size.X / _contentSize.X : 1f;
+            var sy = Size.Y > 0 ? Size.Y / _contentSize.Y : 1f;
+            return new Vector2(sx, sy);
+        }
     }
 
     protected override void KeyBindDown(GUIBoundKeyEventArgs args)
@@ -130,7 +159,8 @@ public sealed partial class DrawCanvas : Control
 
     private void AddPoint(Vector2 pixelPos)
     {
-        var pos = new Vector2(pixelPos.X, pixelPos.Y);
+        var scale = ContentScale;
+        var pos = new Vector2(pixelPos.X / scale.X, pixelPos.Y / scale.Y);
 
         if (_currentPoints.Count > 0 && Vector2.Distance(_currentPoints[^1], pos) < 0.5f)
             return;
@@ -142,18 +172,19 @@ public sealed partial class DrawCanvas : Control
     {
         base.Draw(handle);
 
+        var scale = ContentScale;
         foreach (var stroke in Strokes)
         {
-            DrawStrokePolyline(handle, stroke.Points, stroke.Color);
+            DrawStrokePolyline(handle, stroke.Points, stroke.Color, scale);
         }
 
         if (_drawing && _currentPoints.Count >= 2)
         {
-            DrawStrokePolyline(handle, _currentPoints, DrawColor);
+            DrawStrokePolyline(handle, _currentPoints, DrawColor, scale);
         }
     }
 
-    private void DrawStrokePolyline(DrawingHandleScreen handle, IReadOnlyList<Vector2> points, Color color)
+    private void DrawStrokePolyline(DrawingHandleScreen handle, IReadOnlyList<Vector2> points, Color color, Vector2 scale)
     {
         if (points.Count == 0)
             return;
@@ -162,8 +193,8 @@ public sealed partial class DrawCanvas : Control
 
         for (var i = 0; i < points.Count - 1; i++)
         {
-            var a = points[i];
-            var b = points[i + 1];
+            var a = points[i] * scale;
+            var b = points[i + 1] * scale;
             var segLen = Vector2.Distance(a, b);
             if (segLen <= 0f)
                 continue;
@@ -181,6 +212,6 @@ public sealed partial class DrawCanvas : Control
             }
         }
 
-        handle.DrawCircle(points[^1], baseRadius, color);
+        handle.DrawCircle(points[^1] * scale, baseRadius, color);
     }
 }

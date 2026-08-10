@@ -202,10 +202,10 @@ namespace Content.Client.Paper.UI
                 _contentTiles = visuals.ContentImageTile;
 
                 // BF14: for map surfaces the content is stretched to its natural pixel size so it
-                // overflows the window and can be scrolled/panned.
+                // overflows the window and can be scrolled/panned, and strokes scale with it.
                 if (!visuals.ContentImageTile)
                 {
-                    DrawingSurface.MinSize = new Vector2(contentImage.Texture.Width, contentImage.Texture.Height);
+                    DrawingSurface.SetContentSize(new Vector2(contentImage.Texture.Width, contentImage.Texture.Height));
                 }
             }
 
