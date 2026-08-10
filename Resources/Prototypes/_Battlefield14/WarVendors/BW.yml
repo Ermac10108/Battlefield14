@@ -104,11 +104,13 @@
       - id: USMCFlagFolded # german flag
         amount: 3
 
+#region gear
+
 - type: entity
   parent: ColMarTechBase
   id: CMVendNATOBWWarVendorGear
   name: Bundeswehr gear vendor
-  description: Heer-Grade weaponry from a vending machine.
+  description: Heer-Grade gear from a vending machine.
   suffix: ColMarTech
   components:
   - type: Sprite
@@ -145,11 +147,13 @@
         amount: 5
     - name: Grenades
       entries:
-      - id: OffensiveGrenadeUSMK21 # DM51
-        amount: 20
+      - id: OffensiveGrenadeDEDM51
+        amount: 10
+      - id: DefensiveGrenadeDEDM51
+        amount: 10
       - id: FlashbangGrenadeUSM84
         amount: 20
-      - id: SmokeGrenadeUSM18
+      - id: SmokeGrenadeDEDM45
         amount: 20
 #      - id: LandMineM16A2APMItem DM-22 PARM-2 and FFV 028 SN
 #        amount: 10
@@ -179,6 +183,8 @@
         amount: 3
       - id: Boombox
         amount: 2
+
+#region ammo
 
 - type: entity
   parent: ColMarTechBase

@@ -305,10 +305,13 @@
   id: PACTRequisition
 
 - type: Tag
-  id: RussianUplink
+  id: AmericanUplink
 
 - type: Tag
-  id: AmericanUplink
+  id: BundeswehrUplink
+
+- type: Tag
+  id: RussianUplink
 
 - type: Tag
   id: PistolMagazine # for all kinds of pistol magazines, this is used for pistol magazine pouches
