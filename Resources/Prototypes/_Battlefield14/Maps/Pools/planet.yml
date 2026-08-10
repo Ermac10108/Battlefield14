@@ -10,7 +10,7 @@
   - BF14Customs
   - BF14Interchange
   - BF14FactoryWar
-# - BF14Bengalsk              29.07.2026
+  - BF14Bengalsk
 
 - type: gameMapPool
   id: BF14MapPoolCivilUnrest

@@ -13,9 +13,6 @@
     - state: "normal-unshaded"
       map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
       shader: unshaded
-#      shader: unshaded
-#    - state: panel
-#      map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
     access: [["PACTCommon"]]
   - type: CMAutomatedVendor
@@ -25,12 +22,10 @@
     - name: Armour
       choices: { BF14Armour: 1 }
       entries:
-      - id: EVAKitCombatRU
-        name: voidsuit
-        recommended: true
       - id: ClothingOuterArmorPlateCarrier6B45
         name: plate carrier
       - id: ArmorPlateMediumPackaged
+        recommended: true
     - name: 'Personal Medicine'
       choices: { BF14PersonalMedicine: 1 }
       entries:
