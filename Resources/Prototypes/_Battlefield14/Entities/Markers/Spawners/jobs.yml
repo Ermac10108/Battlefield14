@@ -423,6 +423,86 @@
 
 ## RU
 
+#region RGF
+
+- type: entity
+  id: SpawnPointRGFLieutenant
+  parent: SpawnPointJobBase
+  name: RGF Lieutenant
+  components:
+  - type: SpawnPoint
+    job_id: RGFLieutenant
+  - type: Sprite
+    sprite: _Battlefield14/Interface/Misc/class_icons.rsi
+    layers:
+    - state: pactcaptain
+      scale: 1.5,1.5
+
+- type: entity
+  id: SpawnPointRGFSquadLeader
+  parent: SpawnPointJobBase
+  name: RGF Squad Leader
+  components:
+  - type: SpawnPoint
+    job_id: RGFSquadLeader
+  - type: Sprite
+    sprite: _Battlefield14/Interface/Misc/class_icons.rsi
+    layers:
+    - state: pactsquadleader
+      scale: 1.5,1.5
+
+- type: entity
+  id: SpawnPointRGFRifleman
+  parent: SpawnPointJobBase
+  name: RGF Rifleman
+  components:
+  - type: SpawnPoint
+    job_id: RGFRifleman
+  - type: Sprite
+    sprite: _Battlefield14/Interface/Misc/class_icons.rsi
+    layers:
+    - state: pactinfantry
+      scale: 1.5,1.5
+
+- type: entity
+  id: SpawnPointRGFAutomaticRifleman
+  parent: SpawnPointJobBase
+  name: RGF Automatic Rifleman
+  components:
+  - type: SpawnPoint
+    job_id: RGFAutomaticRifleman
+  - type: Sprite
+    sprite: _Battlefield14/Interface/Misc/class_icons.rsi
+    layers:
+    - state: pactsupport
+      scale: 1.5,1.5
+
+- type: entity
+  id: SpawnPointRGFMedic
+  parent: SpawnPointJobBase
+  name: RGF Medic
+  components:
+  - type: SpawnPoint
+    job_id: RGFMedic
+  - type: Sprite
+    sprite: _Battlefield14/Interface/Misc/class_icons.rsi
+    layers:
+    - state: pactmedic
+      scale: 1.5,1.5
+
+- type: entity
+  id: SpawnPointRGFRecon
+  parent: SpawnPointJobBase
+  name: RGF Recon
+  components:
+  - type: SpawnPoint
+    job_id: RGFRecon
+  - type: Sprite
+    sprite: _Battlefield14/Interface/Misc/class_icons.rsi
+    layers:
+    - state: pactrecon
+      scale: 1.5,1.5
+
 #region VDV
 
 - type: entity
