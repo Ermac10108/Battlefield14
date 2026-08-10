@@ -3,7 +3,7 @@
   mapName: 'Shuddih Town'
   mapPath: /Maps/_Battlefield14/Planets/MultiZ/BF14ShuddihTownZMap0.yml
   minPlayers: 8
-  maxPlayers: 25
+  maxPlayers: 30
   randomRotation: false
   maxRandomOffset: 0
   stations:
@@ -19,7 +19,7 @@
           lobbySortOrder: 1
         - type: StationJobs
           availableJobs:
-            SuspectUS: [ 15, 15 ]
+            SuspectUS: [ 20, 20 ]
             USPDSWATLieutenant: [ 1, 1 ]
             USPDSWATSquadLeader: [ 2, 2 ]
             USPDSWATOfficer: [ 6, 6 ]
