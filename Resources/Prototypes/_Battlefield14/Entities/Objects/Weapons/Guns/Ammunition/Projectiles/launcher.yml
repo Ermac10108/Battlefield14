@@ -103,7 +103,7 @@
   - type: ExplodeOnTrigger
   - type: HeFragProjectile
     fillPrototype: BulletGrenadeM67Fragment
-    capacity: 20
+    capacity: 30
     randomAngle: true
     minVelocity: 8
     maxVelocity: 15
@@ -510,16 +510,16 @@
         Blunt: 200
   - type: HeFragProjectile
     fillPrototype: BulletRPG7OG7VFragment
-    capacity: 40
+    capacity: 90
     randomAngle: true
-    minVelocity: 8
+    minVelocity: 10
     maxVelocity: 15
   - type: ExplodeOnTrigger
   - type: Explosive
     explosionType: Default
-    totalIntensity: 90
+    totalIntensity: 50
     intensitySlope: 5
-    maxIntensity: 4
+    maxIntensity: 2
     maxTileBreak: 0
   - type: StaminaDamageOnCollide
     damage: 200 # It's a fucking rocket

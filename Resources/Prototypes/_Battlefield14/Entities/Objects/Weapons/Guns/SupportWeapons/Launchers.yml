@@ -169,10 +169,14 @@
       - state: mag-1
         map: ["enum.GunVisualLayers.Mag"]
   - type: Clothing
-    sprite: _Battlefield14/Objects/Weapons/Guns/Launchers/SMAWworn.rsi
+    sprite: _Battlefield14/Objects/Weapons/Guns/Launchers/SMAW.rsi
     slots:
     - Back
     - suitStorage
+    - SUITSTORAGE2
+    clothingVisuals:
+      suitstorage2:
+      - state: equipped-BACKPACK
   - type: Gun
     projectileSpeed: 40
     fireRate: 0.5
@@ -463,6 +467,10 @@
     slots:
     - Back
     - suitStorage
+    - SUITSTORAGE2
+    clothingVisuals:
+      suitstorage2:
+      - state: equipped-BACKPACK
   - type: Gun
     projectileSpeed: 40
     fireRate: 0.5

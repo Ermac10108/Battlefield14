@@ -19,21 +19,20 @@
           lobbySortOrder: 1
         - type: StationJobs
           availableJobs:
-            USMCLieutenant: [ 1, 1 ]
-            USMCSquadLeader: [ 2, 2 ]
-            USMCRifleman: [ 9, 9 ]
-            USMCAutomaticRifleman: [ 1, 1 ]
-            USMCMedic: [ 2, 2 ]
-            BWRifleman: [ 3, 3 ]
+            BWLieutenant: [ 1, 1 ]
+            BWSquadLeader: [ 2, 2 ]
+            BWRifleman: [ 9, 9 ]
             BWAutomaticRifleman: [ 1, 1 ]
             BWMedic: [ 1, 1 ]
-            BWSquadLeader: [ 1, 1 ]
+            USMCSquadLeader: [ 1, 1 ]
+            USMCRifleman: [ 3, 3 ]
+            USMCMedic: [ 1, 1 ]
             VDVLieutenant: [ 1, 1 ]
             VDVSquadLeader: [ 3, 3 ]
             VDVRifleman: [ 10, 10 ]
             VDVAutomaticRifleman: [ 3, 3 ]
             VDVMedic: [ 3, 3 ]
-            RUScav: [ 6, 9 ]
+            RUScav: [ 4, 9 ]
         - type: CEStationZLevels
           mapsAbove:
             - /Maps/_Battlefield14/Planets/MultiZ/BF14InterchangeZMap1.yml

@@ -213,14 +213,14 @@
   - type: Clothing
     sprite: _Battlefield14/Objects/Weapons/Guns/Rifles/SCAR.rsi
   - type: GunWieldBonus
-    minAngle: -24
-    maxAngle: -27
+    minAngle: -18
+    maxAngle: -40
   - type: Gun
-    minAngle: 26
-    maxAngle: 40
-    angleIncrease: 1
-    projectileSpeed: 45
     fireRate: 5
+    minAngle: 20
+    maxAngle: 60
+    angleIncrease: 1.5
+    projectileSpeed: 45
     soundGunshot:
       collection: BF_SCARH_Gunshots
       params:
@@ -296,14 +296,14 @@
     shape:
     - 0,0,5,2
   - type: GunWieldBonus
-    minAngle: -20
+    minAngle: -18
     maxAngle: -40
   - type: Gun
     fireRate: 5
     minAngle: 20
     maxAngle: 60
-    angleIncrease: 4
-    angleDecay: 16
+    angleIncrease: 1.5
+    angleDecay: 4
     projectileSpeed: 50
     soundGunshot:
       collection: BF_M14_Gunshots
