@@ -90,3 +90,11 @@
   - /Audio/_Battlefield14/Voice/Human/BlackMesa/Raw/Screaming/hg_onfire04.ogg
   - /Audio/_Battlefield14/Voice/Human/BlackMesa/Raw/Screaming/hg_onfire05.ogg
   - /Audio/_Battlefield14/Voice/Human/BlackMesa/Raw/Screaming/hg_onfire06.ogg
+
+- type: soundCollection
+  id: Doctos
+  files:
+  - /Audio/_Battlefield14/Voice/Human/Belwoods/doctos/doctos01.ogg
+  - /Audio/_Battlefield14/Voice/Human/Belwoods/doctos/doctos02.ogg
+  - /Audio/_Battlefield14/Voice/Human/Belwoods/doctos/doctos03.ogg
+  - /Audio/_Battlefield14/Voice/Human/Belwoods/doctos/doctos04.ogg
