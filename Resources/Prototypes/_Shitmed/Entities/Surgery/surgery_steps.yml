@@ -282,12 +282,9 @@
   components:
   - type: SurgeryStep
     tool:
-    - type: BoneSaw
+    - type: Scalpel
     remove:
     # We remove these components to force people to go through all the steps again lol, otherwise you can just keep chopping.
-    - type: SkinRetracted
-    - type: BleedersClamped
-    - type: InternalBleedersClamped
     - type: IncisionOpen
     duration: 8
   - type: Sprite
