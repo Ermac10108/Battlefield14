@@ -83,3 +83,15 @@
     - grenade
     - nade
     - frag
+
+- type: emote
+  id: Doctos
+  name: chat-emote-name-doctos
+  category: Vocal
+  icon: _Battlefield14/Actions/Voicelines/grenadesurprised.png
+  whitelist:
+    components:
+    - Vocal
+  chatMessages: ["chat-emote-msg-doctos"]
+  chatTriggers:
+    -doctos
