@@ -43,8 +43,6 @@ public sealed class PaperSystem : EntitySystem
         SubscribeLocalEvent<PaperComponent, ExaminedEvent>(OnExamined);
         SubscribeLocalEvent<PaperComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<PaperComponent, PaperInputTextMessage>(OnInputTextMessage);
-        SubscribeLocalEvent<PaperComponent, PaperDrawStrokeMessage>(OnDrawStroke); // BF14
-        SubscribeLocalEvent<PaperComponent, PaperClearMessage>(OnClear); // BF14
 
         SubscribeLocalEvent<ActivateOnPaperOpenedComponent, PaperWriteEvent>(OnPaperWrite);
 
@@ -177,10 +175,6 @@ public sealed class PaperSystem : EntitySystem
                 var writeEvent = new PaperWriteEvent(entity, args.User);
                 RaiseLocalEvent(args.Used, ref writeEvent);
 
-                // Set the draw color from the instrument (pen/crayon ink color). BF14
-                entity.Comp.CurrentColor = GetInstrumentColor(args.Used, entity.Comp.CurrentColor, EntityManager);
-                Dirty(entity); // BF14
-
                 entity.Comp.Mode = PaperAction.Write;
                 _uiSystem.OpenUi(entity.Owner, PaperUiKey.Key, args.User);
                 UpdateUserInterface(entity);
@@ -239,19 +233,6 @@ public sealed class PaperSystem : EntitySystem
         };
     }
 
-    /// <summary>
-    ///     Determines the drawing color of the instrument being held, falling back to the
-    ///     previous color if the item has no defined color. Pens and crayons both carry a
-    ///     <see cref="StampComponent"/> in this fork, which supplies the ink color. BF14
-    /// </summary>
-    private static Color GetInstrumentColor(EntityUid used, Color fallback, EntityManager entityManager)
-    {
-        if (entityManager.TryGetComponent<StampComponent>(used, out var stamp))
-            return stamp.StampedColor;
-
-        return fallback;
-    }
-
     private void OnInputTextMessage(Entity<PaperComponent> entity, ref PaperInputTextMessage args)
     {
         var ev = new PaperWriteAttemptEvent(entity.Owner);
@@ -277,27 +258,6 @@ public sealed class PaperSystem : EntitySystem
         }
 
         entity.Comp.Mode = PaperAction.Read;
-        UpdateUserInterface(entity);
-    }
-
-    private void OnDrawStroke(Entity<PaperComponent> entity, ref PaperDrawStrokeMessage args) // BF14
-    {
-        if (args.Stroke == null || args.Stroke.Points.Count == 0)
-            return;
-
-        // Clamp to a sane limit to avoid abuse.
-        if (entity.Comp.Strokes.Count >= 512)
-            return;
-
-        entity.Comp.Strokes.Add(args.Stroke);
-        Dirty(entity);
-        UpdateUserInterface(entity);
-    }
-
-    private void OnClear(Entity<PaperComponent> entity, ref PaperClearMessage args) // BF14
-    {
-        entity.Comp.Strokes.Clear();
-        Dirty(entity);
         UpdateUserInterface(entity);
     }
 
@@ -445,7 +405,7 @@ public sealed class PaperSystem : EntitySystem
 
     private void UpdateUserInterface(Entity<PaperComponent> entity)
     {
-        _uiSystem.SetUiState(entity.Owner, PaperUiKey.Key, new PaperBoundUserInterfaceState(entity.Comp.Content, entity.Comp.StampedBy, entity.Comp.Mode, entity.Comp.Strokes, entity.Comp.CurrentColor)); // BF14
+        _uiSystem.SetUiState(entity.Owner, PaperUiKey.Key, new PaperBoundUserInterfaceState(entity.Comp.Content, entity.Comp.StampedBy, entity.Comp.Mode));
     }
 }
 

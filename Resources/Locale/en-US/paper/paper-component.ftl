@@ -17,6 +17,5 @@ paper-component-action-stamp-paper-self = You stamp {THE($target)} with {THE($st
 paper-ui-fill-level = {$currentLength}/{$maxLength}
 
 paper-ui-save-button = Save ({$keybind})
-paper-ui-clear-button = Clear
 
 paper-tamper-proof-modified-message = This page was written using tamper-proof ink.

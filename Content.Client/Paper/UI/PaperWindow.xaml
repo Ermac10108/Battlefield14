@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
 <paper:PaperWindow xmlns="https://spacestation14.io"
     xmlns:paper="clr-namespace:Content.Client.Paper.UI"
-    xmlns:draw="clr-namespace:Content.Client.Drawing.UI"
     MouseFilter="Stop" Resizable="True" MinSize="150 150"
     SetSize="510 660"> <!-- Provide some reasonable sizes by default. Can be changed by the component -->
 
@@ -10,14 +8,9 @@
             <TextureButton Name="CloseButton" StyleClasses="windowCloseButton"/>
         </PanelContainer>
         <PanelContainer Name="PaperBackground" StyleClasses="PaperDefaultBorder" VerticalExpand="True" HorizontalExpand="True">
-            <!-- BF14: HScrollEnabled=True keeps map surfaces scrollable/pannable in both axes -->
-            <ScrollContainer Name="ScrollingContents" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="True">
-                <!-- BF14: MaxWidth removed so large map surfaces can expand and be panned -->
-                <PanelContainer Name="PaperContent" VerticalExpand="True" HorizontalExpand="True">
-                    <!-- Freehand drawing overlay. Drawn behind the text so strokes stay anchored to the paper
-                         surface and never shift when the text/input area toggles between read and write modes. -->
-                    <draw:DrawCanvas Name="DrawingSurface" VerticalExpand="True" HorizontalExpand="True"/>
-                    <BoxContainer Name="PaperContentContents" Orientation="Vertical" VerticalAlignment="Stretch">
+            <ScrollContainer Name="ScrollingContents" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalExpand="True" VerticalExpand="True" HScrollEnabled="False">
+                <PanelContainer Name="PaperContent" VerticalExpand="True" HorizontalExpand="True" MaxWidth="600">
+                    <BoxContainer Orientation="Vertical" VerticalAlignment="Stretch">
                         <TextureButton Name="HeaderImage" HorizontalAlignment="Center" VerticalAlignment="Top" MouseFilter="Ignore"/>
                         <Control Name="TextAlignmentPadding" VerticalAlignment="Top"/>
                         <RichTextLabel Name="BlankPaperIndicator" StyleClasses="LabelSecondaryColor" VerticalAlignment="Top" HorizontalAlignment="Center"/>
@@ -37,7 +30,6 @@
         </PanelContainer>
         <!-- Bottom buttons for editing -->
         <BoxContainer Name="EditButtons" Orientation="Horizontal" HorizontalAlignment="Right" Margin="6">
-            <Button Name="ClearButton" Text="clear" />
             <Button Name="SaveButton" />
         </BoxContainer>
     </BoxContainer>
