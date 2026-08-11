@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseItem
+  parent: BaseBattlemap
   id: MapTaurus
   name: 'map (taurus)'
   description: It's a map of Taurus, Florida. The red squares mark objectives.
@@ -13,21 +13,11 @@
       sprite: _Battlefield14/Objects/Misc/maps.rsi
       state: taurus
       scale: 0.7, 0.7
-    - type: Paper
-      contentSize: 0
-    - type: PaperVisuals
-      contentImagePath: "/Textures/_Battlefield14/GroundMaps/Taurus.rsi/map.png"
-      contentImageTile: false
-      backgroundPatchMargin: 0.0, 0.0, 0.0, 0.0
-      contentMargin: 0.0, 0.0, 0.0, 0.0
-      headerMargin: 0.0, 0.0, 0.0, 0.0
-    - type: ActivatableUI
-      key: enum.PaperUiKey.Key
-      requiresComplex: false
-    - type: UserInterface
-      interfaces:
-        enum.PaperUiKey.Key:
-          type: PaperBoundUserInterface
+    - type: TabletopGame
+      size: 190, 200
+      setup:
+        !type:TabletopEmptySetup
+        boardPrototype: PhotoMapTaurus
     - type: ExtendDescription
       descriptionList:
         - description: To use, place on the floor, hover over the item, and tap E on the keyboard.
@@ -35,7 +25,7 @@
           requireDetailRange: true
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBattlemap
   id: MapSpringfield
   name: 'map (springfield)'
   description: It's a map of Springfield, Kentucky. The red squares mark objectives.
@@ -49,21 +39,11 @@
       sprite: _Battlefield14/Objects/Misc/maps.rsi
       state: springfield
       scale: 0.7, 0.7
-    - type: Paper
-      contentSize: 0
-    - type: PaperVisuals
-      contentImagePath: "/Textures/_Battlefield14/GroundMaps/Springfield.rsi/map.png"
-      contentImageTile: false
-      backgroundPatchMargin: 0.0, 0.0, 0.0, 0.0
-      contentMargin: 0.0, 0.0, 0.0, 0.0
-      headerMargin: 0.0, 0.0, 0.0, 0.0
-    - type: ActivatableUI
-      key: enum.PaperUiKey.Key
-      requiresComplex: false
-    - type: UserInterface
-      interfaces:
-        enum.PaperUiKey.Key:
-          type: PaperBoundUserInterface
+    - type: TabletopGame
+      size: 370, 335
+      setup:
+        !type:TabletopEmptySetup
+        boardPrototype: PhotoMapSpringfield
     - type: ExtendDescription
       descriptionList:
         - description: To use, place on the floor, hover over the item, and tap E on the keyboard.
@@ -71,7 +51,7 @@
           requireDetailRange: true
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBattlemap
   id: MapInterchange
   name: 'map (Norvinsk interchange)'
   description: It's a map of Norvinsk, UTLRA mall also nicknamed the interchange. objectives are circled in red.
@@ -82,21 +62,11 @@
       sprite: _Battlefield14/Objects/Misc/maps.rsi
       state: interchange
       scale: 0.7, 0.7
-    - type: Paper
-      contentSize: 0
-    - type: PaperVisuals
-      contentImagePath: "/Textures/_Battlefield14/GroundMaps/interchange.rsi/marked.png"
-      contentImageTile: false
-      backgroundPatchMargin: 0.0, 0.0, 0.0, 0.0
-      contentMargin: 0.0, 0.0, 0.0, 0.0
-      headerMargin: 0.0, 0.0, 0.0, 0.0
-    - type: ActivatableUI
-      key: enum.PaperUiKey.Key
-      requiresComplex: false
-    - type: UserInterface
-      interfaces:
-        enum.PaperUiKey.Key:
-          type: PaperBoundUserInterface
+    - type: TabletopGame
+      size: 1000, 1520
+      setup:
+        !type:TabletopEmptySetup
+        boardPrototype: PhotoMapInterchange
     - type: ExtendDescription
       descriptionList:
         - description: To use, place on the floor, hover over the item, and tap E on the keyboard.
@@ -104,7 +74,7 @@
           requireDetailRange: true
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBattlemap
   id: MapCustoms
   name: 'hand drawn map (Norvinsk customs)'
   description: It's a map of Norvinsk customs. Gotta give credit where it due, atleast this one isnt crumpled to hell like the last batch of maps.
@@ -114,21 +84,11 @@
     - type: Sprite
       sprite: _Battlefield14/Objects/Misc/maps.rsi
       state: customs
-    - type: Paper
-      contentSize: 0
-    - type: PaperVisuals
-      contentImagePath: "/Textures/_Battlefield14/GroundMaps/customs.rsi/map.png"
-      contentImageTile: false
-      backgroundPatchMargin: 0.0, 0.0, 0.0, 0.0
-      contentMargin: 0.0, 0.0, 0.0, 0.0
-      headerMargin: 0.0, 0.0, 0.0, 0.0
-    - type: ActivatableUI
-      key: enum.PaperUiKey.Key
-      requiresComplex: false
-    - type: UserInterface
-      interfaces:
-        enum.PaperUiKey.Key:
-          type: PaperBoundUserInterface
+    - type: TabletopGame
+      size: 1438, 691
+      setup:
+        !type:TabletopEmptySetup
+        boardPrototype: PhotoMapCustoms
     - type: ExtendDescription
       descriptionList:
         - description: To use, place on the floor, hover over the item, and tap E on the keyboard.
@@ -136,7 +96,7 @@
           requireDetailRange: true
 
 - type: entity
-  parent: BaseItem
+  parent: BaseBattlemap
   id: MapBengalsk
   name: 'map (bengalsk)'
   description: It's a map of Bengalsk, in the Russian Federation. The red squares mark objectives.
@@ -150,21 +110,11 @@
       sprite: _Battlefield14/Objects/Misc/maps.rsi
       state: bengalsk
 #      scale: 0.7, 0.7
-    - type: Paper
-      contentSize: 0
-    - type: PaperVisuals
-      contentImagePath: "/Textures/_Battlefield14/GroundMaps/Bengalsk.rsi/map.png"
-      contentImageTile: false
-      backgroundPatchMargin: 0.0, 0.0, 0.0, 0.0
-      contentMargin: 0.0, 0.0, 0.0, 0.0
-      headerMargin: 0.0, 0.0, 0.0, 0.0
-    - type: ActivatableUI
-      key: enum.PaperUiKey.Key
-      requiresComplex: false
-    - type: UserInterface
-      interfaces:
-        enum.PaperUiKey.Key:
-          type: PaperBoundUserInterface
+    - type: TabletopGame
+      size: 384, 130
+      setup:
+        !type:TabletopEmptySetup
+        boardPrototype: PhotoMapBengalsk
     - type: ExtendDescription
       descriptionList:
         - description: To use, place on the floor, hover over the item, and tap E on the keyboard.

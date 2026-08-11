@@ -85,12 +85,6 @@ public sealed partial class PaperVisualsComponent : Component
     public int ContentImageNumLines = 1;
 
     /// <summary>
-    ///     BF14
-    /// </summary>
-    [DataField("contentImageTile")]
-    public bool ContentImageTile = true;
-
-    /// <summary>
     ///     Modulate the style's font by this color
     /// </summary>
     [DataField("fontAccentColor")]
