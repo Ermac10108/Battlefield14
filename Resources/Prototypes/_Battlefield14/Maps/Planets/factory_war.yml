@@ -1,7 +1,7 @@
 - type: gameMap
   id: BF14FactoryWar
   mapName: 'Norskatom facility (LowPop)'
-  mapPath: /Maps/_Battlefield14/Planets/MultiZ/BF14FactoryZMapWar1.yml
+  mapPath: /Maps/_Battlefield14/Planets/MultiZ/FactoryWar/BF14FactoryZMapWar1.yml
   minPlayers: 1
   maxPlayers: 20
   randomRotation: false
@@ -29,19 +29,19 @@
             RKhBMedic: [ 2, 2 ]
         - type: CEStationZLevels
           mapsAbove:
-            - /Maps/_Battlefield14/Planets/MultiZ/BF14FactoryZMapWar2.yml 
-            - /Maps/_Battlefield14/Planets/MultiZ/BF14FactoryZMapWar3.yml
+            - /Maps/_Battlefield14/Planets/MultiZ/FactoryWar/BF14FactoryZMapWar2.yml 
+            - /Maps/_Battlefield14/Planets/MultiZ/FactoryWar/BF14FactoryZMapWar3.yml
           mapsBelow:
-            - /Maps/_Battlefield14/Planets/MultiZ/BF14FactoryZMapWar0.yml 
+            - /Maps/_Battlefield14/Planets/MultiZ/FactoryWar/BF14FactoryZMapWar0.yml 
           zLevelsComponentOverrides:
             - type: CEAutoGridGravity
 
 - type: zMap
   id: BF14FactoryWarZMap
   maps:
-    - /Maps/_Battlefield14/Planets/MultiZ/BF14FactoryZMapWar0.yml    # Undergound
-    - /Maps/_Battlefield14/Planets/MultiZ/BF14FactoryZMapWar1.yml    # Ground floor
-    - /Maps/_Battlefield14/Planets/MultiZ/BF14FactoryZMapWar2.yml    # 1st floor
-    - /Maps/_Battlefield14/Planets/MultiZ/BF14FactoryZMapWar3.yml    # 2nd floor
+    - /Maps/_Battlefield14/Planets/MultiZ/FactoryWar/BF14FactoryZMapWar0.yml    # Undergound
+    - /Maps/_Battlefield14/Planets/MultiZ/FactoryWar/BF14FactoryZMapWar1.yml    # Ground floor
+    - /Maps/_Battlefield14/Planets/MultiZ/FactoryWar/BF14FactoryZMapWar2.yml    # 1st floor
+    - /Maps/_Battlefield14/Planets/MultiZ/FactoryWar/BF14FactoryZMapWar3.yml    # 2nd floor
   components:
     - type: CEAutoGridGravity
