@@ -11,8 +11,6 @@
   - type: Surgery
     steps:
     - SurgeryStepOpenIncisionScalpel
-    - SurgeryStepRetractSkin
-    - SurgeryStepClampBleeders
   - type: SurgeryPartPresentCondition
 
 - type: entity
@@ -52,8 +50,7 @@
   - type: Surgery
     requirement: SurgeryOpenIncision
     steps:
-    - SurgeryStepSawFeature
-    - SurgeryStepClampInternalBleeders
+    - SurgeryStepOpenIncisionScalpel
     - SurgeryStepRemoveFeature
   - type: SurgeryPartCondition
     part: Torso
