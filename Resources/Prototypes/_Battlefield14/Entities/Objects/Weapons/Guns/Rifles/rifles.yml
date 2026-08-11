@@ -214,7 +214,7 @@
     sprite: _Battlefield14/Objects/Weapons/Guns/Rifles/SCAR.rsi
   - type: GunWieldBonus
     minAngle: -18
-    maxAngle: -40
+    maxAngle: -45
   - type: Gun
     fireRate: 5
     minAngle: 20
@@ -297,7 +297,7 @@
     - 0,0,5,2
   - type: GunWieldBonus
     minAngle: -18
-    maxAngle: -40
+    maxAngle: -45
   - type: Gun
     fireRate: 5
     minAngle: 20

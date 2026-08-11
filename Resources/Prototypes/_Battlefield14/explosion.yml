@@ -34,7 +34,7 @@
   lightColor: Orange
   texturePath: /Textures/Effects/fire.rsi
   fireStates: 6
-  fireStacks: 2
+  fireStacks: 1
   throwEntitiesOnExplosion: false
   sound:
     collection: CivExplosionGrenade
