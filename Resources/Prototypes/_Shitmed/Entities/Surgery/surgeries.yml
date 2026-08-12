@@ -50,6 +50,8 @@
   - type: Surgery
     requirement: SurgeryOpenIncision
     steps:
+    - SurgeryStepSawFeature
+    - SurgeryStepClampInternalBleeders
     - SurgeryStepOpenIncisionScalpel
     - SurgeryStepRemoveFeature
   - type: SurgeryPartCondition
