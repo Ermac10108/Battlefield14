@@ -11,6 +11,8 @@
   - type: Surgery
     steps:
     - SurgeryStepOpenIncisionScalpel
+    - SurgeryStepRetractSkin
+    - SurgeryStepClampBleeders
   - type: SurgeryPartPresentCondition
 
 - type: entity
