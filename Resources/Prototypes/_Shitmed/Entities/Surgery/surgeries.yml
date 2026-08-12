@@ -54,7 +54,6 @@
     steps:
     - SurgeryStepSawFeature
     - SurgeryStepClampInternalBleeders
-    - SurgeryStepOpenIncisionScalpel
     - SurgeryStepRemoveFeature
   - type: SurgeryPartCondition
     part: Torso
